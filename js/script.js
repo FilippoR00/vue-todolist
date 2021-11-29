@@ -17,7 +17,7 @@ const app = new Vue({
         addContent : function(){
             if (this.content != "" && this.content != " "){
                 this.todos.push(this.content);
-                this.status.push("false");
+                this.status.push(false);
                 this.content = "";
             }
         },
