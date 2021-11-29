@@ -101,3 +101,14 @@ li:last-of-type hr{
 .undone{
     text-decoration: none;
 }
+
+.active{
+    text-align: center;
+    color: #aaa;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.hidden{
+    display: none;
+}

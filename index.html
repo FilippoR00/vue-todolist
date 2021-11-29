@@ -22,8 +22,9 @@
                 <button @click="addContent">Aggiungi</button>
             </div>
             <ul>
-                <li v-for="(todo, index) in todos"><span :class="status[index] == 1 ? 'done' : 'undone'" ><div>{{todo}}</div></span><i class="far fa-times-circle" @click="removeContent(index)"></i><hr></li>
+                <li v-for="(todo, index) in todos"><span :class="status[index] == 1 ? 'done' : 'undone'" @click="changeStatus(index)"><div></div> {{todo}}</span><i class="far fa-times-circle" @click="removeContent(index)"></i><hr></li>
             </ul>
+            <div :class="todos.length == 0 ? 'active' : 'hidden'">Non ci sono attività da completare</div>
         </div>
     </div>
 

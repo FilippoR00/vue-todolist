@@ -24,6 +24,14 @@ const app = new Vue({
         removeContent : function(index){
             this.todos.splice(index, 1);
             this.status.splice(index, 1);
+        },
+        changeStatus : function(index){
+            if(this.status[index] == 1){
+                this.status[index] = false;
+            } else {
+                this.status[index] = true;
+            }
+            this.$forceUpdate();
         }
     },
 
