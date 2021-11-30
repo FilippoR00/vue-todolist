@@ -3,33 +3,38 @@ const app = new Vue({
     data: {
         content : '',
         todos : [
-            "Fare esercizi",
-            "Guardare Netflix",
-            "Fare la spesa",
+            {
+                title : "Fare esercizi",
+                status : true,
+            },
+            {
+                title: "Guardare Netflix",
+                status: false,
+            },
+            {
+                title: "Fare la spesa",
+                status: false,
+            },
         ],
-        status : [
-            true,
-            false,
-            false,
-        ]
     },
     methods: {
         addContent : function(){
             if (this.content != "" && this.content != " "){
-                this.todos.push(this.content);
-                this.status.push(false);
+                this.todos.push({
+                    title: this.content,
+                    status: false,
+                },);
                 this.content = "";
             }
         },
         removeContent : function(index){
             this.todos.splice(index, 1);
-            this.status.splice(index, 1);
         },
         changeStatus : function(index){
-            if(this.status[index] == 1){
-                this.status[index] = false;
+            if (this.todos[index].status == 1){
+                this.todos[index].status = false;
             } else {
-                this.status[index] = true;
+                this.todos[index].status = true;
             }
             this.$forceUpdate();
         }
